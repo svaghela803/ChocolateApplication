@@ -29,4 +29,9 @@ public class ChocolateService {
         public Optional<Chocolate> getChocolateById(long id){
             return chocolateRepository.findById(id);
         }
+        
+         public Chocolate saveChocolate(Chocolate chocolate) {
+             chocolateRepository.save(chocolate);
+             return chocolate;
+         }
 }
