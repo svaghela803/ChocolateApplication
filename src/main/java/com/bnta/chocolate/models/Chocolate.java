@@ -6,16 +6,19 @@ import javax.persistence.*;
 public class Chocolate {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.Ide)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "cocoaPercentage")
     private int cocoaPercentage;
 
-
-    private Estate estate;
+    @ManyToOne
+    @JoinColumn(name = "estate_id")
+    @JsonIgnoreProperties("chocolates")
+    private Estate estates;
 
     public Chocolate(String name, int cocoaPercentage, Estate estate) {
         this.name = name;
