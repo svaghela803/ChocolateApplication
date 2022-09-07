@@ -2,10 +2,11 @@ package com.bnta.chocolate.models;
 
 import javax.persistence.*;
 
-
+@Entity(name="chocolates")
 public class Chocolate {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.Ide)
     private Long id;
 
 
