@@ -7,10 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
+@Entity(name = "estate")
 public class Estate {
 
-
+    @Id
+    @GeneratedValue(strategy)
     private Long id;
 
 
